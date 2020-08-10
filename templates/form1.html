@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<head>
+    <title>Marks Predictor | Major Project</title>
+    <meta charset="UTF-8">
+    
+    <meta name="keywords" content="">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    
+<!--
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fontawesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename ='style.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js')}}"></script>
+    
+-->
+    <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="static/style_form.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+    <script src="static/bootstrap/js/bootstrap.min.js"></script>
+    
+    
+</head>
+<body >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Output Predictor</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+<!--
+            <li class="nav-item active">
+            <a class="nav-link" href="#">Book An Appointment</a>
+            </li>
+-->
+        </ul>
+        </div>
+    </nav>
+      <div class="spacing"></div>
+    <div class="container h-100">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col text-center ">
+                <h2><strong>Enter Input Values</strong></h2> 
+
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="spacing"></div>
+        <div id = "input-data" class="row">
+        <div class="col-2"></div>
+        <div class="card col col-8">
+        <div class="card-body">
+        <form method="POST" action=" ">
+          
+          <div class="form-group">
+            <label for="gender">Number of school absences</label>
+            <input type="number" class="form-control" name="absences" id="age" aria-describedby="ageHelp" required min="0" max = "93">
+          </div>
+          <div class="form-group">
+            <label for="gender">Age</label>
+            <input type="number" class="form-control" name="age" id="age" aria-describedby="ageHelp" placeholder="Enter age" required min="10">
+          </div>
+            
+          <div class="form-group">
+            <label for="gender">Activities</label>
+            <select name="activities" class="form-control" id="gender" placeholder="Extra-curricular activities">
+              
+              <option value="0">NO</option>
+              <option value="1">YES</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+          <label>Workday alcohol consumption</label>
+          <select name="dalc" class="form-control" id="gender">
+            <option value="1">1- Very low</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5- Very high</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Father's Education</label>
+          <select name="fedu" class="form-control" id="gender">
+            <option value="0">None</option>
+            <option value="1">Primary</option>
+            <option value="2">Secondary</option>
+            <option value="3">Higher</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Number of past class failures</label>
+          <select name="failures" class="form-control" id="gender">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Quality of family relationship</label>
+          <select name="famrel" class="form-control" id="gender">
+            <option value="1">1- Very low</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5- Very high</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Freetime from school</label>
+          <select name="freetime" class="form-control" id="gender">
+            <option value="1">1- Very low</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5- Very high</option>
+          </select>
+        </div>
+
+            <div class="form-group">
+              <label>Father's Job</label>
+              <select name="fjob" class="form-control" id="gender">
+                <option value="0">Health</option>
+                <option value="1">At Home</option>
+                <option value="2">Services</option>
+                <option value="3">Teacher</option>
+                <option value="4">Other</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+            <label>Marks in 1st internal</label>
+            <select name="G1" class="form-control" id="gender">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="19">20</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+          <label>Marks in 2nd internal</label>
+          <select name="G2" class="form-control" id="gender">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="19">20</option>
+          </select>
+      </div>
+
+      <div class="form-group">
+        <label>Going out with friends</label>
+        <select name="goout" class="form-control" id="gender">
+          <option value="1">1- Very less frequently</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5- Very frequently </option>
+        </select>
+      </div>
+          
+          <div class="form-group">
+            <label for="gender">Gaurdian</label>
+            <select name="gaurdian" class="form-control" id="gender">
+             
+              <option value="0">Mother</option>
+              <option value="1">Father</option>
+              <option value="2">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+          <label>Health</label>
+          <select name="health" class="form-control" id="gender">
+            <option value="1">1- Very bad</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5- Very good </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Mother's Education</label>
+          <select name="medu" class="form-control" id="gender">
+            <option value="0">None</option>
+            <option value="1">Primary</option>
+            <option value="2">Secondary</option>
+            <option value="3">Higher</option>
+          </select>
+        </div>
+
+
+          <div class="form-group">
+            <label for="gender">Attended nursery school</label>
+            <select name="nursery" class="form-control" id="gender">
+              <option value="0">NO</option>
+              <option value="1">YES</option>
+            </select>
+        </div>
+          
+
+          <div class="form-group">
+            <label for="gender">Took extra paid classes</label>
+            <select name="paid" class="form-control" id="gender">
+              
+              <option value="0">NO</option>
+              <option value="1">YES</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="gender">Reason to choose school</label>
+          <select name="reason" class="form-control" id="gender">
+            <option value="0">Course</option>
+            <option value="2">Home</option>
+            <option value="3">Reputation</option>
+            <option value="1">Other</option>
+          </select>
+      </div>
+        <div class="form-group">
+          <label for="gender">Relationship</label>
+          <select name="romantic" class="form-control" id="gender">
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+          </select>
+      </div>
+          
+           
+          
+          <button id="submit" class="btn btn-primary">Predict</button>
+        </form>
+        </div>
+        </div>
+        <div class="col-2"></div>
+        </div> 
+        
+        <!-- Step 5 | Confirmation -->
+   
+    </div>
+    <div class="spacing"></div>
+    <footer class="text-center" style="color:white">PESIT&copy;2020</footer>
+</body>
+

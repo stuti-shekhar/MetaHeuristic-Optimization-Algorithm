@@ -1,0 +1,67 @@
+<!-- MultiStep Form -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css" rel="stylesheet">
+	<link href="static/style_form.css" rel="stylesheet">
+	<title>Results</title>
+</head>
+<body>
+	
+	<canvas id="myChart" width="500" height="100" style="background-color: whitesmoke; position: relative; top: 100px;"></canvas>
+	<h2 style="position: relative; top: 100px; left: 400px;">Your grades lies in range [{{min}} - {{max}}]</h2>
+	<h3 style="position: relative; top: 105px; ">Classes and their corresponding grades</h3>
+	<ul style="position: relative; top: 110px; ">
+		<li> Class 1 - [0,5]</li>
+		<li> Class 2 - [6,10]</li>
+		<li> Class 3 - [1,15]</li>
+		<li> Class 4 - [16,20]</li>
+	</ul>
+</body>
+<script>
+var ctx = document.getElementById('myChart');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['G1', 'G2', 'G3 (Predicted)'],
+        datasets: [{
+            label: 'Class of your grade',
+            data: [{{G1}}, {{G2}}, {{G3}}],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+               
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+					max: 4,
+                min: 0,
+                stepSize: 1
+                }
+            }]
+        }
+    }
+	
+});
+</script>
